@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.PostDetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/post_detail_img"
+            android:layout_width="0dp"
+            android:layout_height="225dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/post_detail_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:lineSpacingExtra="4dp"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/post_detail_img" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="12dp"
+            android:background="#2e2e2e"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/post_detail_title" />
+
+        <TextView
+            android:id="@+id/post_detail_date_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="TextView"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            tools:text="18 jan 2018 | by Arun Larrson " />
+
+        <TextView
+
+            android:id="@+id/post_detail_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:lineSpacingExtra="8dp"
+            android:text="Lorem ipsum dolor sit amet consectetur adipiscing elit,rum eiusmod tempor incididunt ut labore et dolore magna aliqua"
+            android:textColor="#373737"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/post_detail_date_name" />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/post_detail_current_user_img"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            app:civ_border_color="@color/colorAccent"
+            app:civ_border_width="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/post_detail_desc" />
+
+
+        <EditText
+            android:id="@+id/post_detail_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/edittext_button_rounded"
+            android:ems="10"
+            android:hint="Write a Comment"
+            android:inputType="text"
+            android:paddingStart="12dp"
+            android:textColor="#171616"
+            android:textColorHint="@color/cardview_dark_background"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/post_detail_current_user_img"
+            app:layout_constraintEnd_toStartOf="@id/post_detail_add_comment_btn"
+            app:layout_constraintStart_toEndOf="@+id/post_detail_current_user_img"
+            app:layout_constraintTop_toTopOf="@+id/post_detail_current_user_img" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/post_detail_add_comment_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="18dp"
+            android:src="@drawable/ic_round_send_24"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="@id/post_detail_comment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/post_detail_comment"
+            app:layout_constraintTop_toTopOf="@id/post_detail_comment" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/post_detail_user_img"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/post_detail_date_name"
+            app:layout_constraintStart_toEndOf="@+id/post_detail_date_name"
+            app:layout_constraintTop_toTopOf="@+id/post_detail_date_name" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/comment_rec"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/post_detail_comment" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
